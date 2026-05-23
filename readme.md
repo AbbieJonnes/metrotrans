@@ -41,8 +41,7 @@ metropass/
 ├── index.html        # Landing page
 ├── register.html     # Registration form
 ├── payment.html      # Payment simulation page
-├── qr.html           # QR code page (future)
-├── scan.html         # Conductor scan page (future)
+├── qr.html           # QR code page (future)      
 ├── app.js            # JavaScript logic
 └── README.md
 ```
