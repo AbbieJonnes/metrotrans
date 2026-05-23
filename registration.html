@@ -1,22 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MetroPass Registration</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>MetroPass - Register</title>
 </head>
 
-<body class="bg-blue-50 flex items-center justify-center h-screen">
+<body class="bg-blue-50 min-h-screen flex items-center justify-center px-4">
 
-  <div class="bg-white p-8 rounded-2xl shadow-lg w-96">
-    <h1 class="text-2xl font-bold text-center mb-6">MetroPass Registration</h1>
+  <!-- Registration Card -->
+  <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-xl">
 
-    <input id="name" type="text" placeholder="Full Name"
-      class="w-full mb-3 p-2 border rounded">
+    <h1 class="text-3xl font-bold text-center text-slate-800 mb-2">
+      Passenger Registration
+    </h1>
 
-    <input id="phone" type="text" placeholder="Phone Number"
-      class="w-full mb-3 p-2 border rounded">
+    <p class="text-gray-500 text-center mb-8">
+      Subscribe weekly or monthly for your transport pass.
+    </p>
 
-    <input id="route" type="text" placeholder="Route (e.g Nairobi-Thika)"
-      class="w-full mb-3 p-2 border rounded">
+    <!-- FORM -->
+    <form id="registerForm" class="space-y-5">
+
+      <!-- Full Name -->
+      <div>
+        <label class="block mb-2 font-medium text-slate-700">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        >
+      </div>
+
+      <!-- Phone Number -->
+      <div>
+        <label class="block mb-2 font-medium text-slate-700">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="e.g 0712345678"
+          class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        >
+      </div>
+
+      <!-- Route -->
+      <div>
+        <label class="block mb-2 font-medium text-slate-700">
+          Route
+        </label>
+
+        <input
+          type="text"
+          id="route"
+          placeholder="e.g Nairobi - Thika"
+          class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        >
+      </div>
+
+      <!-- Subscription -->
+      <div>
+        <label class="block mb-2 font-medium text-slate-700">
+          Subscription Plan
+        </label>
+
+        <select
+          id="plan"
+          class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="Weekly">Weekly</option>
+          <option value="Monthly">Monthly</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl transition"
+      >
+        Continue to Payment
+      </button>
+
+    </form>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+
+    const form = document.getElementById("registerForm");
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      // Collect user data
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const route = document.getElementById("route").value;
+      const plan = document.getElementById("plan").value;
+
+      // Expiry logic
+      const today = new Date();
+      const expiry = new Date();
+
+      if(plan === "Weekly") {
+        expiry.setDate(today.getDate() + 7);
+      } else {
+        expiry.setMonth(today.getMonth() + 1);
+      }
+
+      // Passenger object
+      const passenger = {
+        name,
+        phone,
+        route,
+        plan,
+        expiry: expiry.toDateString(),
+        amount: plan === "Weekly" ? "KES 500" : "KES 2000"
+      };
+
+      // Save to localStorage
+      localStorage.setItem(
+        "passenger",
+        JSON.stringify(passenger)
+      );
+
+      // Redirect to payment page
+      window.location.href = "payment.html";
+
+    });
+
+  </script>
+
+</body>
+</html>
