@@ -14,7 +14,7 @@ This project is built using:
 - Registration form (name, phone, route)
 - Subscription selection (Weekly or Monthly)
 - Automatic expiry date calculation
-- Data stored in browser using localStorage
+- Data stored
 - Redirect to payment simulation page
 
 ### Payment Simulation
