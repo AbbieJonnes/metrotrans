@@ -1,7 +1,7 @@
-# MetroPass Smart Transit System
+# Metrotrans Smart Transit System
 
 ## Project Overview
-MetroPass is a front-end web project that simulates a smart transport subscription system. It allows passengers to register, choose a weekly or monthly plan, and receive a digital pass that can later be verified using a QR code system (simulated).
+MetroTrans is a front-end web project that simulates a smart transport subscription system. It allows passengers to register, choose a weekly or monthly plan, and receive a digital pass that can later be verified using a QR code system (simulated).
 
 This project is built using:
 - HTML
