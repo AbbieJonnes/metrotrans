@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetroPass Payment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-50 flex items-center justify-center h-screen">
+
+  <!-- MAIN CARD -->
+  <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-xl text-center">
+
+    <h1 class="text-2xl font-bold mb-4">Processing Payment</h1>
+
+    <p class="text-gray-600 mb-6">
+      Click continue to complete M-Pesa payment
+    </p>
+
+    <button
+      onclick="openPinModal()"
+      class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700"
+    >
+      Continue Payment
+    </button>
+
+    <p id="status" class="text-sm text-gray-500 mt-4"></p>
+
+  </div>
+
+  <!-- PIN MODAL (HIDDEN INITIALLY) -->
+  <div id="pinModal"
+       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+
+    <div class="bg-white w-96 p-6 rounded-2xl shadow-xl text-center">
+
+      <h2 class="text-xl font-bold mb-3">Enter M-Pesa PIN</h2>
+
+      <p class="text-gray-500 mb-4">
+        For security, enter your 4-digit PIN
+      </p>
+
+      <input
+        id="pin"
+        type="password"
+        maxlength="4"
+        placeholder="Enter your pin"
+        class="w-full border p-3 rounded-xl text-center tracking-widest mb-4"
+      >
+
+      <button
+        onclick="processPayment()"
+        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700"
+      >
+        Submit
+      </button>
+
+      <button
+        onclick="closePinModal()"
+        class="w-full mt-2 text-gray-500"
+      >
+        Cancel
+      </button>
+
+      <p id="modalStatus" class="text-sm text-gray-500 mt-3"></p>
+
+    </div>
+
+  </div>
+
+  <script>
+    const passenger = JSON.parse(localStorage.getItem("passenger"));
+
+    function openPinModal() {
+      document.getElementById("pinModal").classList.remove("hidden");
+    }
+
+    function closePinModal() {
+      document.getElementById("pinModal").classList.add("hidden");
+    }
+
+    function processPayment() {
+      const pin = document.getElementById("pin").value;
+      const modalStatus = document.getElementById("modalStatus");
+
+      if (!passenger) {
+        alert("No passenger data found!");
+        window.location.href = "register.html";
+        return;
+      }
+
+      if (pin.length !== 4) {
+        modalStatus.innerText = "Enter a valid 4-digit PIN";
+        return;
+      }
+
+      modalStatus.innerText = "Processing...";
+
+      setTimeout(() => {
+        modalStatus.innerText = "Verifying M-Pesa PIN...";
+      }, 1500);
+
+      setTimeout(() => {
+        modalStatus.innerText = "Payment Successful ✔";
+      }, 3000);
+
+      setTimeout(() => {
+        window.location.href = "qr.html";
+      }, 4500);
+    }
+  </script>
+
+</body>
+</html>
