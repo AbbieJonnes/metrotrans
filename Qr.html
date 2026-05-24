@@ -24,7 +24,7 @@
     </p>
 
     <!-- QR CODE BOX -->
-    <div id="qrcode" class="flex justify-center mb-6"></div>
+    <div id="Qrcode" class="flex justify-center mb-6"></div>
 
     <!-- Passenger Info -->
     <div id="info" class="text-left text-sm text-gray-700 space-y-2"></div>
@@ -47,7 +47,7 @@
     }
 
     // Generate QR Code data
-    const qrData = `
+    const QrData = `
 Name: ${passenger.name}
 Phone: ${passenger.phone}
 Route: ${passenger.route}
@@ -56,8 +56,8 @@ Expiry: ${passenger.expiry}
     `;
 
     // Create QR code
-    new QRCode(document.getElementById("qrcode"), {
-      text: qrData,
+    new QRCode(document.getElementById("Qrcode"), {
+      text: QrData,
       width: 200,
       height: 200
     });
