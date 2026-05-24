@@ -125,13 +125,13 @@
 
       // Passenger object
       const passenger = {
-        name,
-        phone,
-        route,
-        plan,
-        expiry: expiry.toDateString(),
-        amount: plan === "Weekly" ? "KES 500" : "KES 2000"
-      };
+  name: name,
+  phone: phone,
+  route: route,
+  plan: plan,
+  expiry: expiry.toDateString(),
+  amount: plan === "Weekly" ? "KES 500" : "KES 2000"
+};
 
       // Save to localStorage
       localStorage.setItem(
