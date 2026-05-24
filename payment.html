@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetroPass Payment</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -12,7 +13,9 @@
   <!-- MAIN CARD -->
   <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-xl text-center">
 
-    <h1 class="text-2xl font-bold mb-4">Processing Payment</h1>
+    <h1 class="text-2xl font-bold mb-4">
+      Processing Payment
+    </h1>
 
     <p class="text-gray-600 mb-6">
       Click continue to complete M-Pesa payment
@@ -20,7 +23,7 @@
 
     <button
       onclick="openPinModal()"
-      class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700"
+      class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition"
     >
       Continue Payment
     </button>
@@ -29,33 +32,42 @@
 
   </div>
 
-  <!-- PIN MODAL (HIDDEN INITIALLY) -->
-  <div id="pinModal"
-       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+  <!-- PIN MODAL -->
+  <div
+    id="pinModal"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+  >
 
     <div class="bg-white w-96 p-6 rounded-2xl shadow-xl text-center">
 
-      <h2 class="text-xl font-bold mb-3">Enter M-Pesa PIN</h2>
+      <h2 class="text-xl font-bold mb-3">
+        M-Pesa Payment
+      </h2>
 
-      <p class="text-gray-500 mb-4">
-        For security, enter your 4-digit PIN
-      </p>
+      <!-- DYNAMIC PAYMENT MESSAGE -->
+      <p
+        id="paymentText"
+        class="text-gray-500 mb-4"
+      ></p>
 
+      <!-- PIN INPUT -->
       <input
         id="pin"
         type="password"
         maxlength="4"
-        placeholder="Enter your pin"
-        class="w-full border p-3 rounded-xl text-center tracking-widest mb-4"
+        placeholder="Enter 4-digit PIN"
+        class="w-full border p-3 rounded-xl text-center tracking-widest mb-4 focus:outline-none focus:ring-2 focus:ring-green-500"
       >
 
+      <!-- SUBMIT BUTTON -->
       <button
         onclick="processPayment()"
-        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700"
+        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition"
       >
         Submit
       </button>
 
+      <!-- CANCEL BUTTON -->
       <button
         onclick="closePinModal()"
         class="w-full mt-2 text-gray-500"
@@ -63,52 +75,98 @@
         Cancel
       </button>
 
-      <p id="modalStatus" class="text-sm text-gray-500 mt-3"></p>
+      <!-- STATUS -->
+      <p
+        id="modalStatus"
+        class="text-sm text-gray-500 mt-3"
+      ></p>
 
     </div>
 
   </div>
 
   <script>
+
+    // GET PASSENGER DATA
     const passenger = JSON.parse(localStorage.getItem("passenger"));
 
+    // OPEN MODAL
     function openPinModal() {
-      document.getElementById("pinModal").classList.remove("hidden");
+
+      document
+        .getElementById("pinModal")
+        .classList.remove("hidden");
+
+      // SHOW AMOUNT BASED ON PLAN
+      document.getElementById("paymentText").innerText =
+        `Do you want to pay ${passenger.amount} to MetroPass? Enter your M-Pesa PIN`;
+
     }
 
+    // CLOSE MODAL
     function closePinModal() {
-      document.getElementById("pinModal").classList.add("hidden");
+
+      document
+        .getElementById("pinModal")
+        .classList.add("hidden");
+
     }
 
+    // PROCESS PAYMENT
     function processPayment() {
-      const pin = document.getElementById("pin").value;
-      const modalStatus = document.getElementById("modalStatus");
 
+      const pin =
+        document.getElementById("pin").value;
+
+      const modalStatus =
+        document.getElementById("modalStatus");
+
+      // CHECK PASSENGER
       if (!passenger) {
+
         alert("No passenger data found!");
+
         window.location.href = "register.html";
+
         return;
       }
 
+      // VALIDATE PIN
       if (pin.length !== 4) {
-        modalStatus.innerText = "Enter a valid 4-digit PIN";
+
+        modalStatus.innerText =
+          "Enter a valid 4-digit PIN";
+
         return;
       }
 
-      modalStatus.innerText = "Processing...";
+      // PAYMENT FLOW
+      modalStatus.innerText =
+        "Processing payment...";
 
       setTimeout(() => {
-        modalStatus.innerText = "Verifying M-Pesa PIN...";
+
+        modalStatus.innerText =
+          "Verifying M-Pesa PIN...";
+
       }, 1500);
 
       setTimeout(() => {
-        modalStatus.innerText = "Payment Successful ✔";
+
+        modalStatus.innerText =
+          "Payment Successful ✔";
+
       }, 3000);
 
+      // REDIRECT
       setTimeout(() => {
+
         window.location.href = "qr.html";
+
       }, 4500);
+
     }
+
   </script>
 
 </body>
