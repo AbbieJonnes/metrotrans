@@ -14,160 +14,40 @@
   <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-xl text-center">
 
     <h1 class="text-2xl font-bold mb-4">
-      Processing Payment
+      Payment Instructions
     </h1>
 
-    <p class="text-gray-600 mb-6">
-      Click continue to complete M-Pesa payment
+    <p class="text-gray-600 mb-4">
+      MetroPass Subscription Payment
     </p>
 
-    <button
-      onclick="openPinModal()"
-      class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition"
-    >
-      Continue Payment
-    </button>
+    <!-- STATIC PRICES -->
+    <div class="text-left bg-gray-100 p-4 rounded-xl mb-6">
 
-    <p id="status" class="text-sm text-gray-500 mt-4"></p>
+      <p class="mb-2">
+        <span class="font-semibold">Weekly Plan:</span> KES 500
+      </p>
 
-  </div>
-
-  <!-- PIN MODAL -->
-  <div
-    id="pinModal"
-    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-  >
-
-    <div class="bg-white w-96 p-6 rounded-2xl shadow-xl text-center">
-
-      <h2 class="text-xl font-bold mb-3">
-        M-Pesa Payment
-      </h2>
-
-      <!-- DYNAMIC PAYMENT MESSAGE -->
-      <p
-        id="paymentText"
-        class="text-gray-500 mb-4"
-      ></p>
-
-      <!-- PIN INPUT -->
-      <input
-        id="pin"
-        type="password"
-        maxlength="4"
-        placeholder="Enter 4-digit PIN"
-        class="w-full border p-3 rounded-xl text-center tracking-widest mb-4 focus:outline-none focus:ring-2 focus:ring-green-500"
-      >
-
-      <!-- SUBMIT BUTTON -->
-      <button
-        onclick="processPayment()"
-        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition"
-      >
-        Submit
-      </button>
-
-      <!-- CANCEL BUTTON -->
-      <button
-        onclick="closePinModal()"
-        class="w-full mt-2 text-gray-500"
-      >
-        Cancel
-      </button>
-
-      <!-- STATUS -->
-      <p
-        id="modalStatus"
-        class="text-sm text-gray-500 mt-3"
-      ></p>
+      <p>
+        <span class="font-semibold">Monthly Plan:</span> KES 2000
+      </p>
 
     </div>
 
+    <!-- INSTRUCTIONS -->
+    <p class="text-gray-600 mb-6">
+      To complete payment, dial <b>*234#</b> and follow M-Pesa instructions.
+    </p>
+
+    <!-- LINK TO NEXT PAGE -->
+    <a
+      href="qr.html"
+      class="block w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition"
+    >
+      I Have Paid
+    </a>
+
   </div>
-
-  <script>
-
-    // GET PASSENGER DATA
-    const passenger = JSON.parse(localStorage.getItem("passenger"));
-
-    // OPEN MODAL
-    function openPinModal() {
-
-      document
-        .getElementById("pinModal")
-        .classList.remove("hidden");
-
-      // SHOW AMOUNT BASED ON PLAN
-      document.getElementById("paymentText").innerText =
-        `Do you want to pay ${passenger.amount} to MetroPass? Enter your M-Pesa PIN`;
-
-    }
-
-    // CLOSE MODAL
-    function closePinModal() {
-
-      document
-        .getElementById("pinModal")
-        .classList.add("hidden");
-
-    }
-
-    // PROCESS PAYMENT
-    function processPayment() {
-
-      const pin =
-        document.getElementById("pin").value;
-
-      const modalStatus =
-        document.getElementById("modalStatus");
-
-      // CHECK PASSENGER
-      if (!passenger) {
-
-        alert("No passenger data found!");
-
-        window.location.href = "register.html";
-
-        return;
-      }
-
-      // VALIDATE PIN
-      if (pin.length !== 4) {
-
-        modalStatus.innerText =
-          "Enter a valid 4-digit PIN";
-
-        return;
-      }
-
-      // PAYMENT FLOW
-      modalStatus.innerText =
-        "Processing payment...";
-
-      setTimeout(() => {
-
-        modalStatus.innerText =
-          "Verifying M-Pesa PIN...";
-
-      }, 1500);
-
-      setTimeout(() => {
-
-        modalStatus.innerText =
-          "Payment Successful ✔";
-
-      }, 3000);
-
-      // REDIRECT
-      setTimeout(() => {
-
-        window.location.href = "Qr.html";
-
-      }, 4500);
-
-    }
-
-  </script>
 
 </body>
 </html>
