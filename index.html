@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetroPass Smart Transit</title>
-  <link rel="stylesheet" href="registration.html">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-slate-100">
+
   <!-- NAVBAR -->
-<nav class="bg-blue-700 text-white shadow-lg">
+  <nav class="bg-blue-700 text-white shadow-lg">
 
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-    <!-- LOGO -->
-    <h1 class="text-2xl font-bold">
-      METRO-TRANS
-    </h1>
+      <!-- LOGO -->
+      <h1 class="text-2xl font-bold">
+        METRO-TRANS
+      </h1>
 
-    <!-- LINKS -->
-    <div class="flex space-x-6">
+      <!-- LINKS -->
+      <div class="flex space-x-6">
 
-      <a href="#home" class="hover:text-yellow-300 transition">
-        Home
-      </a>
+        <a href="#home" class="hover:text-yellow-300 transition">
+          Home
+        </a>
 
-      <a href="#about" class="hover:text-yellow-300 transition">
-        About Us
-      </a>
+        <a href="#about" class="hover:text-yellow-300 transition">
+          About Us
+        </a>
 
-      <a href="#contact" class="hover:text-yellow-300 transition">
-        Contact
-      </a>
+        <a href="#contact" class="hover:text-yellow-300 transition">
+          Contact
+        </a>
+
+      </div>
 
     </div>
 
-  </div>
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="min-h-screen flex items-center justify-center px-6">
+  <section id="home" class="min-h-screen flex items-center justify-center px-6">
 
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-      <!-- TEXT CONTENT -->
+      <!-- TEXT -->
       <div>
         <h1 class="text-5xl font-bold text-slate-800 leading-tight mb-6">
           Smart Transport <br>
@@ -55,85 +56,90 @@
 
         <p class="text-lg text-gray-600 mb-8">
           MetroPass allows passengers to subscribe weekly or monthly,
-          pay digitally, and verify transport access using QR codes.
+          make digital payments, and receive QR code tickets.
         </p>
 
-        <div class="flex gap-4">
-          <a href="registration.html"
-            class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl shadow-md transition">
-            Get Started
-          </a>
-
-          <a href="#about"
-            class="border border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-6 py-3 rounded-xl transition">
-            Learn More
-          </a>
-        </div>
+        <a href="registration.html"
+           class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl shadow-md transition">
+          Get Started
+        </a>
       </div>
 
-      <!-- IMAGE CARD -->
+      <!-- IMAGE -->
       <div class="bg-white p-6 rounded-3xl shadow-xl">
-        <img src="assets/images/Screenshot (148).png" alt="Metro Transport" class="rounded-2xl w-full h-[400px] object-cover"/>
+        <img src="assets/images/Screenshot (148).png"
+             class="rounded-2xl w-full h-[400px] object-cover"
+             alt="Metro Transport">
       </div>
 
     </div>
+
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section id="about" class="bg-white py-20 px-6">
+
     <div class="max-w-5xl mx-auto text-center">
 
-      <h2 class="text-4xl font-bold text-slate-800 mb-6">
+      <h2 class="text-4xl font-bold mb-6">
         About MetroPass
       </h2>
 
       <p class="text-gray-600 text-lg leading-8">
-        MetroPass is a smart transport subscription system designed to
-        simplify public transport payments. Passengers can register,
-        choose subscription plans, receive QR codes, and verify their
-        payments quickly when boarding public vehicles.
+        MetroPass is a smart transport subscription system that allows passengers
+        to register, choose weekly or monthly plans, simulate payment, and receive
+        QR code tickets for verification when boarding.
       </p>
 
     </div>
+
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="py-20 px-6">
-    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-10 text-center">
+  <!-- CONTACT FORM -->
+  <section id="contact" class="py-20 px-6 bg-slate-100">
 
-      <h2 class="text-4xl font-bold text-slate-800 mb-8">
+    <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10">
+
+      <h2 class="text-4xl font-bold text-center mb-4">
         Contact Us
       </h2>
 
-      <p class="text-lg text-gray-600 mb-6">
-        Have questions or need assistance? Reach out to us anytime.
+      <p class="text-gray-600 text-center mb-10">
+        We are here to help. Fill in the form below.
       </p>
 
-      <div class="space-y-4 text-lg">
+      <form class="space-y-5">
 
-        <p class="text-slate-700">
-          <span class="font-semibold">Call Us:</span>
-          0715902970
-        </p>
-
-        <p class="text-slate-700">
-          <span class="font-semibold">Email Us:</span>
-          <a href="mailto:abigaelmwangi534@gmail.com" class="text-blue-700 hover:underline"> abigaelmwangi534@gmail.com</a>
-        </p>
-
-        <p class="text-slate-700">
-          <span class="font-semibold">Location:</span>
-          Nairobi, Kenya
-        </p>
-
-      </div>
-
+        <input type="text" placeholder="Full Name" required class="w-full border p-3 rounded-xl">
+      
+        <input type="email" placeholder="Email Address" required class="w-full border p-3 rounded-xl">
+      
+        <input type="tel" placeholder="Phone Number" class="w-full border p-3 rounded-xl">
+      
+        <textarea placeholder="Message" required class="w-full border p-3 rounded-xl"></textarea>
+      
+        <button type="submit"
+          class="w-full bg-blue-700 text-white py-3 rounded-xl hover:bg-blue-800">
+          Send Message
+        </button>
+      
+      </form>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-blue-700 text-white text-center py-5">
-    <p> &copy 2026 MetroPass Smart Transit System. All Rights Reserved.</p>
-  </footer>
+  </section>
+<!-- FOOTER -->
+<footer class="bg-blue-700 text-white text-center py-5">
+
+  <p>&copy; 2026 MetroPass Smart Transit System</p>
+
+  <p class="mt-2">
+    Email: 
+    <a href="mailto:abigaelmwangi534@gmail.com" class="underline hover:text-yellow-300">
+      abigaelmwangi534@gmail.com
+    </a>
+  </p>
+
+</footer>
+
 </body>
 </html>
