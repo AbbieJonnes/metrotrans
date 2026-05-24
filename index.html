@@ -11,23 +11,53 @@
 </head>
 
 <body class="bg-slate-100">
-
   <!-- NAVBAR -->
-  <nav class="bg-blue-700 text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav class="bg-blue-700 text-white shadow-lg">
 
-      <!-- Logo -->
-      <h1 class="text-2xl font-bold">METRO-TRANS</h1>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-      <!-- Navigation Links -->
-      <div class="space-x-6 hidden md:flex">
-        <a href="#home" class="hover:text-yellow-300 transition">Home</a>
-        <a href="#about" class="hover:text-yellow-300 transition">About Us</a>
-        <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
-      </div>
+    <!-- LOGO -->
+    <h1 class="text-2xl font-bold">
+      METRO-TRANS
+    </h1>
 
-    </div>
-  </nav>
+    <!-- HAMBURGER BUTTON -->
+    <button
+      onclick="showNav()"
+      class="text-3xl font-bold"
+    >
+      ☰
+    </button>
+
+  </div>
+
+  <!-- DROPDOWN MENU -->
+  <ul
+    id="menu"
+    class="hidden bg-blue-800 px-6 py-4 space-y-4"
+  >
+
+    <li>
+      <a href="#home" class="block hover:text-yellow-300 transition">
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a href="#about" class="block hover:text-yellow-300 transition">
+        About Us
+      </a>
+    </li>
+
+    <li>
+      <a href="#contact" class="block hover:text-yellow-300 transition">
+        Contact
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
 
   <!-- HERO SECTION -->
   <section class="min-h-screen flex items-center justify-center px-6">
@@ -124,5 +154,12 @@
     <p> &copy 2026 MetroPass Smart Transit System. All Rights Reserved.</p>
   </footer>
 
+  <!--JS-->
+  <script>
+    function showNav() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
