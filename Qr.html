@@ -6,9 +6,6 @@
   <title>MetroPass QR Ticket</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- QR CODE LIBRARY -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 </head>
 
 <body class="bg-blue-50 flex items-center justify-center min-h-screen">
@@ -20,60 +17,37 @@
     </h1>
 
     <p class="text-gray-600 mb-6">
-      Show this QR code to the conductor
+      Show this ticket to the conductor
     </p>
 
-    <!-- QR CODE BOX -->
-    <div id="Qrcode" class="flex justify-center mb-6"></div>
+    <!-- STATIC QR IMAGE -->
+    <div class="flex justify-center mb-6">
+      <img
+        src="assets/images/scan.jpg"
+        alt="QR Code"
+        class="w-48 h-48"
+      >
+    </div>
 
-    <!-- Passenger Info -->
-    <div id="info" class="text-left text-sm text-gray-700 space-y-2"></div>
+    <!-- STATIC INFO -->
+    <div class="text-left text-sm text-gray-700 space-y-2 bg-gray-100 p-4 rounded-xl">
 
-    <button
-      onclick="goHome()"
-      class="w-full mt-6 bg-blue-700 text-white py-3 rounded-xl hover:bg-blue-800"
+      <p><strong>Name:</strong> Passenger Name</p>
+      <p><strong>Route:</strong> Nairobi - Westlands</p>
+      <p><strong>Plan:</strong> Weekly / Monthly</p>
+      <p><strong>Expiry:</strong> 30 May 2026</p>
+
+    </div>
+
+    <!-- BACK BUTTON -->
+    <a
+      href="index.html"
+      class="block w-full mt-6 bg-blue-700 text-white py-3 rounded-xl hover:bg-blue-800"
     >
       Back to Home
-    </button>
+    </a>
 
   </div>
-
-  <script>
-    const passenger = JSON.parse(localStorage.getItem("passenger"));
-
-    if (!passenger) {
-      alert("No passenger data found!");
-      window.location.href = "register.html";
-    }
-
-    // Generate QR Code data
-    const QrData = `
-Name: ${passenger.name}
-Phone: ${passenger.phone}
-Route: ${passenger.route}
-Plan: ${passenger.plan}
-Expiry: ${passenger.expiry}
-    `;
-
-    // Create QR code
-    new QRCode(document.getElementById("Qrcode"), {
-      text: QrData,
-      width: 200,
-      height: 200
-    });
-
-    // Show passenger details
-    document.getElementById("info").innerHTML = `
-      <p><strong>Name:</strong> ${passenger.name}</p>
-      <p><strong>Route:</strong> ${passenger.route}</p>
-      <p><strong>Plan:</strong> ${passenger.plan}</p>
-      <p><strong>Expiry:</strong> ${passenger.expiry}</p>
-    `;
-
-    function goHome() {
-      window.location.href = "index.html";
-    }
-  </script>
 
 </body>
 </html>
