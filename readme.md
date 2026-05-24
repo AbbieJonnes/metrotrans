@@ -31,7 +31,6 @@ The project is designed using frontend technologies
 
 - HTML
 - Tailwind CSS
-- JavaScript
 
 ## Project Structure
 
