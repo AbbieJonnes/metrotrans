@@ -61,6 +61,9 @@ METRO-TRANS/
 8. Wait for payment processing.
 9. View the generated QR code ticket.
 
+## Live URL
+https://metrotrans-seven.vercel.app/
+
 ## License
 This project is under the MIT License
 
