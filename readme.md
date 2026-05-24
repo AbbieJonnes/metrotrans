@@ -1,56 +1,78 @@
-# Metrotrans Smart Transit System
+# METRO-TRANS SMART TRANSPORT SYSTEM
+
+## Table of Contents
+
+1. Project Overview
+2. Features
+3. Technologies Used
+4. Project Structure
+5. How to Use the System
+6. Author
+7. GitHub Repository
 
 ## Project Overview
-MetroTrans is a front-end web project that simulates a smart transport subscription system. It allows passengers to register, choose a weekly or monthly plan, and receive a digital pass that can later be verified using a QR code system (simulated).
 
-This project is built using:
+Metro-Trans is a smart transport subscription system that allows passengers to register, choose a transport subscription plan, simulate M-Pesa payment, and receive a QR code ticket for transport verification.
+
+The project is designed using frontend technologies
+
+## Features
+
+- Responsive landing page
+- Hamburger navigation menu
+- Passenger registration form
+- Weekly and monthly subscription plans
+- Simulated M-Pesa payment modal
+- Dynamic payment amount display
+- QR code generation
+- Responsive user interface
+
+## Technologies Used
+
 - HTML
 - Tailwind CSS
 - JavaScript
 
-## Features
-
-### Passenger Features
-- Registration form (name, phone, route)
-- Subscription selection (Weekly or Monthly)
-- Automatic expiry date calculation
-- Data stored
-- Redirect to payment simulation page
-
-### Payment Simulation
-- Payment process
-- Redirects user after successful simulation
-
-### QR System (Planned)
-- Passenger data encoded into QR format
-- Used for verification by conductor page
-
-### Conductor View (Planned)
-- Displays passenger details
-- Shows subscription status (Active or Expired)
-
-## Technologies Used
-- HTML
-- Tailwind CSS
-- Js
 ## Project Structure
 
 ```text
-metropass/
+METRO-TRANS/
 │
-├── index.html        # Landing page
-├── register.html     # Registration form
-├── payment.html      # Payment simulation page
-├── qr.html           # QR code page (future)      
-├── app.js            # JavaScript logic
-└── README.md
+├── index.html
+├── registration.html
+├── payment.html
+├── qr.html
+├── README.md
+│
+├── assets/
+│   └── images/
+│       └── Screenshot (148).png
 ```
 
-## Github
-https://github.com/abbiejonnes
+## How to Use the System
+
+1. Open the landing page.
+2. Click the "Get Started" button.
+3. Fill in passenger details in the registration form.
+4. Select either a weekly or monthly subscription plan.
+5. Submit the form to continue to payment.
+6. Click "Continue Payment".
+7. Enter a 4-digit M-Pesa PIN in the payment modal.
+8. Wait for payment processing.
+9. View the generated QR code ticket.
 
 ## License
-This project is under the  MIT License
+This project is under the MIT License
 
 ## Author
-Abbie Jonnes
+
+Name: Abbie Jonnes
+
+GitHub Username: Abbie Jonnes
+
+## GitHub Repository
+
+https://github.com/AbbieJonnes
+
+## Email
+abigaelmwangi534@gmail.com
