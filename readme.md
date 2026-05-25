@@ -50,15 +50,14 @@ METRO-TRANS/
 
 ## How to Use the System
 
-1. Open the landing page.
-2. Click the "Get Started" button.
-3. Fill in passenger details in the registration form.
-4. Select either a weekly or monthly subscription plan.
-5. Submit the form to continue to payment.
-6. Click "Continue Payment".
-7. Enter a 4-digit M-Pesa PIN in the payment modal.
-8. Wait for payment processing.
-9. View the generated QR code ticket.
+Open the landing page.
+Click the "Get Started" button.
+Fill in passenger details in the registration form.
+Select either a weekly or monthly subscription plan.
+Submit the form to continue to payment.
+Click "Continue Payment".
+Wait for payment processing.
+View the generated QR code ticket.
 
 ## Live URL
 https://metrotrans-seven.vercel.app/
