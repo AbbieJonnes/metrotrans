@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>MetroPass Smart Transit</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 scroll-smooth">
 
   <!-- NAVBAR -->
-  <nav class="bg-black text-white shadow-lg">
+  <nav class="bg-black text-white fixed w-full z-50 shadow-xl">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
       <!-- LOGO -->
-      <h1 class="text-2xl font-bold">
-        METRO-TRANS
-      </h1>
+      <div class="flex items-center gap-3">
+
+        <div class="bg-blue-600 p-3 rounded-full">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+
+        <h1 class="text-2xl font-extrabold tracking-wide">
+          METRO-TRANS
+        </h1>
+
+      </div>
 
       <!-- LINKS -->
-      <div class="flex space-x-6">
+      <div class="hidden md:flex items-center gap-8 text-lg">
 
-        <a href="#home" class="hover:text-yellow-300 transition">
+        <a href="#home" class="hover:text-blue-400 transition">
           Home
         </a>
 
-        <a href="#about" class="hover:text-yellow-300 transition">
-          About Us
+        <a href="#about" class="hover:text-blue-400 transition">
+          About
         </a>
 
-        <a href="#contact" class="hover:text-yellow-300 transition">
+        <a href="#services" class="hover:text-blue-400 transition">
+          Services
+        </a>
+
+        <a href="#contact" class="hover:text-blue-400 transition">
           Contact
         </a>
 
@@ -43,33 +62,124 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section id="home" class="min-h-screen flex items-center justify-center px-6">
+  <section
+    id="home"
+    class="min-h-screen bg-gradient-to-br from-blue-100 via-white to-slate-200 flex items-center pt-28 px-6"
+  >
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-      <!-- TEXT -->
+      <!-- LEFT CONTENT -->
       <div>
-        <h1 class="text-5xl font-bold text-slate-800 leading-tight mb-6">
-          Smart Transport <br>
-          Payment System
+
+        <div class="inline-block bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold mb-6">
+          Smart Digital Transport System
+        </div>
+
+        <h1 class="text-6xl font-extrabold leading-tight text-slate-800 mb-6">
+
+          Faster Travel <br>
+
+          <span class="text-blue-700">
+            Smarter Payments
+          </span>
+
         </h1>
 
-        <p class="text-lg text-gray-600 mb-8">
-          MetroPass allows passengers to subscribe weekly or monthly,
-          make digital payments, and receive QR code tickets.
+        <p class="text-xl text-gray-600 leading-8 mb-8">
+
+          MetroPass allows passengers to register digitally,
+          subscribe weekly or monthly, make secure digital payments,
+          and instantly receive QR-code tickets for seamless boarding.
+
         </p>
 
-        <a href="registration.html"
-           class="bg-black hover:bg-blue-800 text-white px-6 py-3 rounded-xl shadow-md transition">
-          Get Started
-        </a>
+        <!-- BUTTONS -->
+        <div class="flex flex-col sm:flex-row gap-5">
+
+          <a
+            href="registration.html"
+            class="bg-black hover:bg-blue-700 text-white px-8 py-4 rounded-2xl shadow-lg transition duration-300 text-center font-semibold"
+          >
+            Get Started
+          </a>
+
+          <a
+            href="#about"
+            class="border-2 border-black hover:bg-black hover:text-white px-8 py-4 rounded-2xl transition duration-300 text-center font-semibold"
+          >
+            Learn More
+          </a>
+
+        </div>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-3 gap-8 mt-12">
+
+          <div>
+            <h2 class="text-4xl font-bold text-blue-700">
+              24/7
+            </h2>
+
+            <p class="text-gray-600">
+              Support
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-4xl font-bold text-blue-700">
+              100%
+            </h2>
+
+            <p class="text-gray-600">
+              Secure
+            </p>
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- IMAGE -->
-      <div class="bg-white p-6 rounded-3xl shadow-xl">
-        <img src="assets/images/Screenshot (148).png"
-             class="rounded-2xl w-full h-[400px] object-cover"
-             alt="Metro Transport">
+      <!-- RIGHT IMAGE -->
+      <div class="relative">
+
+        <!-- BACKGROUND EFFECT -->
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-blue-300 rounded-full blur-3xl opacity-30"></div>
+
+        <!-- IMAGE CARD -->
+        <div class="relative bg-white p-5 rounded-[35px] shadow-2xl">
+
+          <img
+            src="assets/images/Screenshot (148).png"
+            alt="Metro Transport"
+            class="rounded-[25px] w-full h-[500px] object-cover"
+          >
+
+          <!-- FLOATING QR CARD -->
+          <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow-xl px-6 py-4 rounded-2xl flex items-center gap-4"
+          >
+
+            <div class="bg-green-100 p-4 rounded-full">
+              <i class="fa-solid fa-qrcode text-green-600 text-2xl"></i>
+            </div>
+
+            <div>
+
+              <h3 class="font-bold text-gray-800">
+                Instant QR Ticket
+              </h3>
+
+              <p class="text-gray-500 text-sm">
+                Scan & Board Easily
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -77,69 +187,521 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="bg-white py-20 px-6">
+  <section id="about" class="bg-white py-28 px-6">
 
-    <div class="max-w-5xl mx-auto text-center">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-      <h2 class="text-4xl font-bold mb-6">
-        About MetroPass
-      </h2>
+      <!-- IMAGE -->
+      <div class="relative">
 
-      <p class="text-gray-600 text-lg leading-8">
-        MetroPass is a smart transport subscription system that allows passengers
-        to register, choose weekly or monthly plans, simulate payment, and receive
-        QR code tickets for verification when boarding.
-      </p>
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
+
+        <img
+          src="assets/images/Screenshot (148).png"
+          alt="MetroPass Team"
+          class="relative rounded-[35px] shadow-2xl w-full h-[500px] object-cover"
+        >
+
+      </div>
+
+      <!-- TEXT -->
+      <div>
+
+        <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-5 font-semibold">
+          About MetroPass
+        </div>
+
+        <h2 class="text-5xl font-extrabold text-slate-800 mb-8 leading-tight">
+
+          Transforming Public <br>
+
+          Transport Through
+          <span class="text-blue-700">
+            Technology
+          </span>
+
+        </h2>
+
+        <p class="text-gray-600 text-lg leading-9 mb-6">
+
+          MetroPass is a smart transport subscription platform designed
+          to simplify urban travel. The system allows passengers
+          to register digitally, subscribe to weekly or monthly plans,
+          make secure payments, and receive QR-code-based tickets instantly.
+
+        </p>
+
+        <p class="text-gray-600 text-lg leading-9 mb-8">
+
+          Our goal is to reduce transport delays, eliminate cash-handling
+          challenges, and improve convenience for both passengers
+          and transport operators.
+
+        </p>
+
+        <!-- FEATURES -->
+        <div class="grid sm:grid-cols-2 gap-6">
+
+          <div class="flex gap-4">
+
+            <div class="bg-green-100 p-4 rounded-full h-fit">
+              <i class="fa-solid fa-check text-green-700"></i>
+            </div>
+
+            <div>
+
+              <h3 class="font-bold text-lg">
+                Secure Transactions
+              </h3>
+
+              <p class="text-gray-500">
+                Safe and reliable payments.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="bg-yellow-100 p-4 rounded-full h-fit">
+              <i class="fa-solid fa-qrcode text-yellow-600"></i>
+            </div>
+
+            <div>
+
+              <h3 class="font-bold text-lg">
+                Instant QR Tickets
+              </h3>
+
+              <p class="text-gray-500">
+                Faster passenger verification.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="bg-blue-100 p-4 rounded-full h-fit">
+              <i class="fa-solid fa-bus text-blue-700"></i>
+            </div>
+
+            <div>
+
+              <h3 class="font-bold text-lg">
+                Smart Transit
+              </h3>
+
+              <p class="text-gray-500">
+                Modern transport innovation.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="bg-red-100 p-4 rounded-full h-fit">
+              <i class="fa-solid fa-clock text-red-600"></i>
+            </div>
+
+            <div>
+
+              <h3 class="font-bold text-lg">
+                Time Saving
+              </h3>
+
+              <p class="text-gray-500">
+                Reduced queues and delays.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
-  <!-- CONTACT FORM -->
-  <section id="contact" class="py-20 px-6 bg-slate-100">
+  <!-- SERVICES -->
+  <section id="services" class="bg-slate-100 py-28 px-6">
 
-    <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10">
+    <div class="max-w-7xl mx-auto">
 
-      <h2 class="text-4xl font-bold text-center mb-4">
-        Contact Us
-      </h2>
+      <div class="text-center mb-16">
 
-      <p class="text-gray-600 text-center mb-10">
-        We are here to help. Fill in the form below.
-      </p>
+        <h2 class="text-5xl font-bold text-slate-800 mb-5">
+          Our Services
+        </h2>
 
-      <form class="space-y-5">
+        <p class="text-gray-600 text-lg">
+          Smart solutions built for modern transportation systems.
+        </p>
 
-        <input type="text" placeholder="Full Name" required class="w-full border p-3 rounded-xl">
-      
-        <input type="email" placeholder="Email Address" required class="w-full border p-3 rounded-xl">
-      
-        <input type="tel" placeholder="Phone Number" class="w-full border p-3 rounded-xl">
-      
-        <textarea placeholder="Message" required class="w-full border p-3 rounded-xl"></textarea>
-      
-        <button type="submit"
-          class="w-full bg-black text-white py-3 rounded-xl hover:bg-blue-800">
-          Send Message
-        </button>
-      
-      </form>
+      </div>
+
+      <!-- CARDS -->
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- CARD 1 -->
+        <div class="bg-white p-10 rounded-3xl shadow-lg hover:-translate-y-3 transition duration-300">
+
+          <div class="bg-blue-100 w-20 h-20 flex items-center justify-center rounded-full mb-6">
+
+            <i class="fa-solid fa-credit-card text-blue-700 text-3xl"></i>
+
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4">
+            Digital Payments
+          </h3>
+
+          <p class="text-gray-600 leading-7">
+
+            Secure weekly and monthly subscription payments
+            through mobile payment systems.
+
+          </p>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-white p-10 rounded-3xl shadow-lg hover:-translate-y-3 transition duration-300">
+
+          <div class="bg-green-100 w-20 h-20 flex items-center justify-center rounded-full mb-6">
+
+            <i class="fa-solid fa-qrcode text-green-700 text-3xl"></i>
+
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4">
+            QR Verification
+          </h3>
+
+          <p class="text-gray-600 leading-7">
+
+            Generate instant QR tickets for smooth and
+            quick passenger verification.
+
+          </p>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-white p-10 rounded-3xl shadow-lg hover:-translate-y-3 transition duration-300">
+
+          <div class="bg-yellow-100 w-20 h-20 flex items-center justify-center rounded-full mb-6">
+
+            <i class="fa-solid fa-bus text-yellow-600 text-3xl"></i>
+
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4">
+            Smart Transit
+          </h3>
+
+          <p class="text-gray-600 leading-7">
+
+            Faster and more convenient transport experience
+            for commuters and operators.
+
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
   </section>
-<!-- FOOTER -->
-<footer class="bg-black text-white text-center py-5">
 
-  <p>&copy; 2026 MetroPass Smart Transit System</p>
+  <!-- CONTACT -->
+  <section id="contact" class="py-28 px-6 bg-white">
 
-  <p class="mt-2">
-    Email: 
-    <a href="mailto:abigaelmwangi534@gmail.com" class="underline hover:text-yellow-300">
-      abigaelmwangi534@gmail.com
-    </a>
-  </p>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-</footer>
+      <!-- LEFT -->
+      <div>
+
+        <h2 class="text-5xl font-bold text-slate-800 mb-6">
+          Contact Us
+        </h2>
+
+        <p class="text-gray-600 text-lg leading-8 mb-8">
+
+          Have questions or need support?
+          Reach out to the MetroPass team anytime.
+
+        </p>
+
+        <div class="space-y-5">
+
+          <div class="flex items-center gap-4">
+
+            <div class="bg-blue-100 p-4 rounded-full">
+              <i class="fa-solid fa-envelope text-blue-700"></i>
+            </div>
+
+            <p class="text-gray-700">
+              <a
+    href="mailto:abigaelmwangi534@gmail.com"
+    class="hover:text-blue-600 transition"
+  >
+    abigaelmwangi534@gmail.com
+  </a>
+            </p>
+
+          </div>
+
+          <div class="flex items-center gap-4">
+
+            <div class="bg-green-100 p-4 rounded-full">
+              <i class="fa-solid fa-phone text-green-700"></i>
+            </div>
+
+            <p class="text-gray-700">
+              +254 715 902 970
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="bg-slate-100 p-10 rounded-3xl shadow-xl">
+
+        <form class="space-y-6">
+
+          <input
+            type="text"
+            placeholder="Full Name"
+            required
+            class="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            required
+            class="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            required
+            class="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full bg-black hover:bg-blue-700 text-white py-4 rounded-xl transition duration-300 font-semibold"
+          >
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-20 pb-10 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+
+      <!-- COMPANY -->
+      <div>
+
+        <div class="flex items-center gap-3 mb-5">
+
+          <div class="bg-blue-600 p-3 rounded-full">
+            <i class="fa-solid fa-bus"></i>
+          </div>
+
+          <h2 class="text-2xl font-bold">
+            METRO-TRANS
+          </h2>
+
+        </div>
+
+        <p class="text-gray-400 leading-8">
+
+          MetroPass is a modern smart transit system focused on improving
+          public transportation through digital payments,
+          QR-code ticket verification, and seamless commuter experiences.
+
+        </p>
+
+      </div>
+
+      <!-- WHY CHOOSE US -->
+      <div>
+
+        <h3 class="text-2xl font-bold mb-6">
+          Why Choose Us
+        </h3>
+
+        <ul class="space-y-4 text-gray-400">
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            Fast digital payments
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            Secure QR verification
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            Convenient subscriptions
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            Reduced boarding delays
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- MISSION -->
+      <div>
+
+        <h3 class="text-2xl font-bold mb-6">
+          Mission & Vision
+        </h3>
+
+        <div class="mb-6">
+
+          <h4 class="font-semibold text-blue-400 mb-2">
+            Our Mission
+          </h4>
+
+          <p class="text-gray-400 leading-7">
+
+            To simplify public transportation through secure,
+            smart, and accessible digital transit solutions.
+
+          </p>
+
+        </div>
+
+        <div>
+
+          <h4 class="font-semibold text-blue-400 mb-2">
+            Our Vision
+          </h4>
+
+          <p class="text-gray-400 leading-7">
+
+            To become the leading smart transit platform
+            transforming urban mobility across Africa.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+
+        <h3 class="text-2xl font-bold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-gray-400">
+
+          <div class="flex items-center gap-4">
+
+            <div class="bg-slate-800 p-3 rounded-full">
+              <i class="fa-solid fa-envelope text-blue-400"></i>
+            </div>
+
+            <p>
+              <a
+    href="mailto:abigaelmwangi534@gmail.com"
+    class="hover:text-blue-600 transition"
+  >
+    abigaelmwangi534@gmail.com
+  </a>
+            </p>
+
+          </div>
+
+          <div class="flex items-center gap-4">
+
+            <div class="bg-slate-800 p-3 rounded-full">
+              <i class="fa-solid fa-phone text-green-400"></i>
+            </div>
+
+            <p>
+              +254 715 902 970
+            </p>
+
+          </div>
+
+          <div class="flex items-center gap-4">
+
+            <div class="bg-slate-800 p-3 rounded-full">
+              <i class="fa-solid fa-location-dot text-red-400"></i>
+            </div>
+
+            <p>
+              Nairobi, Kenya
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="flex gap-4 mt-8">
+
+          <a href="#" class="bg-slate-800 hover:bg-blue-600 transition p-4 rounded-full">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="bg-slate-800 hover:bg-pink-600 transition p-4 rounded-full">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="bg-slate-800 hover:bg-sky-500 transition p-4 rounded-full">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="border-t border-gray-800 mt-14 pt-6 text-center text-gray-500">
+
+      <p>
+      &copy 2026 MetroPass Smart Transit System | All Rights Reserved
+      </p>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
