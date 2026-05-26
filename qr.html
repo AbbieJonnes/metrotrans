@@ -3,49 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MetroPass QR Ticket</title>
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
-<body class="bg-blue-50 flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-br from-blue-100 via-white to-slate-200 min-h-screen flex items-center justify-center px-4 py-10 overflow-y-auto">
 
-  <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-xl text-center">
+  <!-- MAIN CONTAINER -->
+  <div class="relative bg-white w-full max-w-lg rounded-[35px] shadow-2xl overflow-visible">
 
-    <h1 class="text-2xl font-bold mb-4 text-slate-800">
-      Your MetroPass Ticket
-    </h1>
+    <!-- TOP HEADER -->
+    <div class="bg-black text-white p-8 relative rounded-t-[35px]">
 
-    <p class="text-gray-600 mb-6">
-      Show this ticket to the conductor
-    </p>
+      <!-- ICON -->
+      <div class="absolute top-6 right-6 bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
 
-    <!-- STATIC QR IMAGE -->
-    <div class="flex justify-center mb-6">
-      <img
-        src="assets/images/scan.jpg"
-        alt="qr code"
-        class="w-48 h-48"
+        <i class="fa-solid fa-bus"></i>
+      </div>
+
+      <h1 class="text-4xl font-extrabold mb-3">
+        MetroPass Ticket
+      </h1>
+
+      <p class="text-gray-300 text-lg">
+        Smart Transit QR Verification
+      </p>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="p-8 text-center">
+
+      <!-- SUCCESS ICON -->
+      <div class="flex justify-center mb-6">
+
+        <div class="bg-green-100 w-24 h-24 rounded-full flex items-center justify-center shadow-lg">
+
+          <i class="fa-solid fa-circle-check text-green-600 text-5xl"></i>
+
+        </div>
+
+      </div>
+
+      <!-- TITLE -->
+      <h2 class="text-3xl font-bold text-slate-800 mb-3">
+        Payment Successful
+      </h2>
+
+      <p class="text-gray-500 text-lg leading-7 mb-8">
+
+        Your subscription has been activated successfully.
+        Show this QR code to the conductor during boarding.
+
+      </p>
+
+      <!-- QR CODE -->
+      <div class="flex justify-center mb-10">
+
+        <div class="bg-white p-5 rounded-[30px] shadow-xl border border-gray-200">
+
+          <img
+            src="assets/images/scan.jpg"
+            alt="QR Code"
+            class="w-60 h-60 object-cover"
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PASSENGER DETAILS -->
+      <div class="bg-slate-100 rounded-[30px] p-7 text-left shadow-inner space-y-6">
+
+        <!-- NAME -->
+        <div class="flex items-center gap-5">
+
+          <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center">
+
+            <i class="fa-solid fa-user text-blue-700 text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-500 text-sm">
+              Passenger Name
+            </p>
+
+            <h3 class="font-bold text-lg text-slate-800">
+              Passenger Name
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- ROUTE -->
+        <div class="flex items-center gap-5">
+
+          <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center">
+
+            <i class="fa-solid fa-route text-green-700 text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-500 text-sm">
+              Route
+            </p>
+
+            <h3 class="font-bold text-lg text-slate-800">
+              Nairobi - Westlands
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- PLAN -->
+        <div class="flex items-center gap-5">
+
+          <div class="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center">
+
+            <i class="fa-solid fa-calendar text-yellow-600 text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-500 text-sm">
+              Subscription Plan
+            </p>
+
+            <h3 class="font-bold text-lg text-slate-800">
+              Weekly Plan
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- EXPIRY -->
+        <div class="flex items-center gap-5">
+
+          <div class="bg-red-100 w-14 h-14 rounded-full flex items-center justify-center">
+
+            <i class="fa-solid fa-clock text-red-600 text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-500 text-sm">
+              Expiry Date
+            </p>
+
+            <h3 class="font-bold text-lg text-slate-800">
+              30 May 2026
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- PAYMENT STATUS -->
+        <div class="flex items-center gap-5">
+
+          <div class="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center">
+
+            <i class="fa-solid fa-wallet text-purple-600 text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-500 text-sm">
+              Payment Status
+            </p>
+
+            <h3 class="font-bold text-lg text-green-600">
+              Verified
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <a
+        href="index.html"
+        class="block w-full mt-8 bg-black hover:bg-blue-700 text-white py-4 rounded-2xl text-lg font-semibold shadow-lg transition duration-300"
       >
-    </div>
 
-    <!-- STATIC INFO -->
-    <div class="text-left text-sm text-gray-700 space-y-2 bg-gray-100 p-4 rounded-xl">
+        Back to Home
 
-      <p><strong>Name:</strong> Passenger Name</p>
-      <p><strong>Route:</strong> Nairobi - Westlands</p>
-      <p><strong>Plan:</strong> Weekly / Monthly</p>
-      <p><strong>Expiry:</strong> 30 May 2026</p>
+      </a>
 
     </div>
-
-    <!-- BACK BUTTON -->
-    <a
-      href="index.html"
-      class="block w-full mt-6 bg-black text-white py-3 rounded-xl hover:bg-blue-800"
-    >
-      Back to Home
-    </a>
 
   </div>
 
